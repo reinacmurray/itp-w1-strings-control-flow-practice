@@ -1,7 +1,27 @@
 def positions(a_string, first_word, second_word, third_word):
-    pass
+    
+    #decided to do using for-loops
+    
+    a_list = [first_word, second_word, third_word]
+    
+    occurrences = "" 
+    
+    for each_word in a_list:
+        if each_word == third_word:
+            if each_word in a_string:
+                occurrences += str(a_string.index(each_word))
+            else:
+                occurrences += '-'
+        else:
+            if each_word in a_string:
+                occurrences += (str(a_string.index(each_word)) + ',')
+            else:
+                occurrences += '-,'
 
-
+    return occurrences
+    
+    
+    
 def test_three_occurrences():
     # Positions:
     #         0                         26      34
